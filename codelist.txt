@@ -1,0 +1,76 @@
+<head>
+<title>
+<body>
+<header>
+<footer>
+
+<article> - element represents a self-contained composition in a document,
+page, application, or site, which is intended to be independently 
+distributable or reusable (e.g., in syndication). Examples include: 
+a forum post, a magazine or newspaper article, or a blog entry.
+
+<address> - element indicates that the enclosed HTML provides contact 
+information for a person or people, or for an organization.
+
+<section>
+
+<p>
+
+<div>
+
+<span> - element is a generic inline container for phrasing content, which does
+not inherently represent anything. It can be used to group elements
+for styling purposes (using the class or id attributes), or because
+they share attribute values, such as lang. It should be used only 
+when no other semantic element is appropriate. <span> is very much 
+like a <div> element, but <div> is a block-level element whereas a 
+<span> is an inline element.
+
+<img>
+
+<aside> - element represents a portion of a document whose content is 
+only indirectly related to the document's main content. Asides are 
+frequently presented as sidebars or call-out boxes.
+
+<audio> - element is used to embed sound content in documents. It may contain 
+one or more audio sources, represented using the src attribute or 
+the <source> element: the browser will choose the most suitable one.
+
+<source> - element specifies multiple media resources for the <picture>, the
+<audio> element, or the <video> element. It is an empty element, 
+meaning that it has no content and does not have a closing tag. It 
+is commonly used to offer the same media content in multiple file 
+formats in order to provide compatibility with a broad range of browsers 
+given their differing support for image file formats and media file 
+formats.
+
+<canvas> - element with either the canvas scripting API or the WebGL API to
+draw graphics and animations.
+
+<datalist> - element contains a set of <option> elements that represent the 
+permissible or recommended options available to choose from within other controls.
+
+<details> - creates a disclosure widget in which information is visible only when
+the widget is toggled into an "open" state. A summary or label can be provided using
+the <summary> element.
+
+<summary> -  element specifies a summary, caption, or legend for a <details> element's
+ disclosure box. Clicking the <summary> element toggles the state of the parent
+ <details> element open and closed.
+
+<embed> - element embeds external content at the specified point in the document. This 
+content is provided by an external application or other source of interactive content 
+such as a browser plug-in.
+
+<nav>
+
+<output> - is a container element into which a site or app can inject the results of a 
+calculation or the outcome of a user action.
+
+<progress> - element displays an indicator showing the completion progress of a task, 
+typically displayed as a progress bar.
+
+<video>
+<ul>
+<ol> 
+<li>
