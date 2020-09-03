@@ -1,31 +1,29 @@
 var express = require("express");
 var app = express();
 
-app.get("/", function (req, res) {
-    res.send("Hi There!");
+app.use(express.static("public"));
+app.set("view engine" , "ejs");
+
+app.get("/", function(req, res){
+    res.render("home");
 });
 
-app.get("/r/:subRedditName", function (req, res) {
-    var subReddit = req.params.subRedditName;
-    res.send("Welcome to the " + subReddit.toUpperCase() + " Subreddit");
+app.get("/epicboards/:thing", function(req, res){
+    var thing = req.params.thing;
+    res.render("love", {thingVar: thing});
 });
 
-app.get("/r/:subRedditName/comments/:id/:title/", function (req, res) {
-    res.send("Welcome to a Deep! Subpage");
+app.get("/posts", function(req, res) {
+    var posts = [
+        {title: "Ready Player One" , author: "Ernest Cline"},
+        {title: "The Picture of Dorian Gray" , author: "Oscar Wilde"},
+        {title: "Tell Tale Heart" , author: "Edgar Allen Poe"}
+    ];
+    res.render("posts", {posts: posts});
 });
 
-app.get("/bye", function (req, res) {
-    res.send("Goodbye");
+app.listen(3000, function () {
+    console.log("Server is a GO");
 });
 
-app.get("/dog", function(req, res){
-    res.send("Meow!");
-});
 
-/* app.get("*", function (req, res) {
-    res.send("You Are A Star!");
-}); */
-
-app.listen(3000, function(){
-    console.log("Server Has Started");
-});
