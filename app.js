@@ -1,29 +1,27 @@
 var express = require("express");
 var app = express();
+var bodyParser = require("body-parser");
 
-app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine" , "ejs");
+
+var friends = ["Mike", "Tony", "Maria", "Joe", "Lou"];
 
 app.get("/", function(req, res){
     res.render("home");
 });
 
-app.get("/epicboards/:thing", function(req, res){
-    var thing = req.params.thing;
-    res.render("love", {thingVar: thing});
+app.post("/addfriend", function(req, res){
+    var newFriend = req.body.newfriend;
+    friends.push(newFriend);
+    res.redirect("/friends");
+
 });
 
-app.get("/posts", function(req, res) {
-    var posts = [
-        {title: "Ready Player One" , author: "Ernest Cline"},
-        {title: "The Picture of Dorian Gray" , author: "Oscar Wilde"},
-        {title: "Tell Tale Heart" , author: "Edgar Allen Poe"}
-    ];
-    res.render("posts", {posts: posts});
+app.get("/friends", function(req, res){
+    res.render("friends", {friends: friends});
 });
 
 app.listen(3000, function () {
     console.log("Server is a GO");
 });
-
-
